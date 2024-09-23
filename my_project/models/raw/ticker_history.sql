@@ -1,0 +1,6 @@
+{# select * 
+from glob('s3://us-prd-motherduck-open-datasets/stocks/**/ticker_info*.csv'); #}
+
+select *
+from read_csv('s3://us-prd-motherduck-open-datasets/stocks/**/ticker_history_*.csv',
+  filename = true)
