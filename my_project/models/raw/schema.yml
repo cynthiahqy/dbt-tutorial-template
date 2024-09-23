@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: ticker_history
+    columns:
+      - name: date
+        data_tests:
+          - unique
