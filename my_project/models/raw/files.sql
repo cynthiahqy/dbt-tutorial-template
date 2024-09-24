@@ -1,3 +1,14 @@
+{{
+    config(
+        pre_hook="""
+            SET VARIABLE my_files = (
+                select ARRAY_AGG(file)
+                from glob('s3://us-prd-motherduck-open-datasets/stocks/**/*') )
+        """
+    )
+}}
+
+
 select * EXCLUDE(content),
     case
         when "file" like '%/option_%' then 'stock'
